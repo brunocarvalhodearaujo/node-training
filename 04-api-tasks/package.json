@@ -1,0 +1,17 @@
+{
+  "name": "@trainning/04-api-tasks",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "mysql2": "^3.11.0"
+  }
+}
