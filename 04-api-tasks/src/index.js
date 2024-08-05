@@ -21,6 +21,8 @@ const db = knex({
 })
 
 const app = express()
+
+// middleware para converter o body da requisição para JSON
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -37,24 +39,20 @@ app.post('/create-database-tables', async (req, res) => {
       table.timestamps()
     })
 
-    res
-      .header('Content-Type', 'application/json')
-      .json({ message: 'Tables created successfully' })
+    res.json({ message: 'Tables created successfully' })
   } catch (error) {
     console.error(error)
-    res
-      .header('Content-Type', 'application/json')
-      .json({ message: 'Failed to create tables' })
+    res.json({ message: 'Failed to create tables' })
   }
 })
 
 app.get('/tasks', (req, res) => {
-  res
-    .header('Content-Type', 'application/json')
-    .json([
-      { id: 1, name: 'Comprar mais leite', completed: false },
-      { id: 2, name: 'Pegar as crianças na escola', completed: true },
-    ])
+  const tasks = [
+    { id: 1, name: 'Comprar mais leite', completed: false },
+    { id: 2, name: 'Pegar as crianças na escola', completed: true },
+  ]
+
+  res.json(tasks)
 })
 
 app.post('/tasks', async (req, res) => {
