@@ -12,7 +12,6 @@ import console from 'node:console'
 import knexConfig from '../knexfile.js'
 
 const db = knex(knexConfig)
-
 const app = express()
 
 // middleware para converter o body da requisição para JSON
@@ -129,5 +128,5 @@ app.put('/tasks/:id', async (req, res) => {
 
 // starts a simple http server locally on port 3000
 app.listen(3000, () => {
-  console.log('Listening on 127.0.0.1:3000')
+  console.info('Listening on 127.0.0.1:3000')
 })
