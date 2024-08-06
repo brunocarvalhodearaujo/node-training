@@ -8,5 +8,6 @@ Layout de uma aplicação de Todo Tasks, com as operações de CRUD.
 
 ## Referências
 
+- [Saiba o que é REST (Representational State Transfer) e como usá-lo neste tutorial](https://rockcontent.com/br/blog/rest/)
 - [O que é CRUD](https://coodesh.com/blog/dicionario/o-que-e-crud)
 - [Bootstrap](https://getbootstrap.com)
