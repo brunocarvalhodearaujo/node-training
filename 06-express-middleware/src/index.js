@@ -16,7 +16,7 @@ app.use(express.json({ limit: '50mb' }))
 
 /**
  * Exemplo de middleware para autenticação
- * 
+ *
  * @param {{ lock: boolean }} options
  * @returns {express.Handler}
  */
@@ -28,7 +28,7 @@ function authenticate(options = {}) {
 }
 
 // GET /
-app.get('/', authenticate(), (req, res) => {
+app.get('/',(req, res) => {
   res
     .status(200)
     .json({ version: '1.0.0' })
@@ -39,7 +39,7 @@ class Users {
    * GET /info
    * @type {express.Handler}
    */
-  getInfo = (request, response, next) => {
+  getUserInfo = (request, response, next) => {
     response
       .status(200)
       .json({ nome: 'Bruno', cpf: '123.456.789-00' })
@@ -47,7 +47,7 @@ class Users {
 
   index () {
     return Router()
-      .get('/info', this.getInfo)
+      .get('/info', authenticate(), this.getUserInfo)
 
   }
 }
